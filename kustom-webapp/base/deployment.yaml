@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: mywebapp
 spec:
+  selector: matchLabels: app: mywebapp
   replicas: 1
   template:
     spec: # Pod spec
-    selector: matchLabels: app: mywebapp
       containers:
       - name: mycontainer
         image: "devopsjourney1/mywebapp:latest"
